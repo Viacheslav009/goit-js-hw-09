@@ -16,6 +16,7 @@ const timer = {
       return;
     }
     this.isActive = true;
+    buttonStart.setAttribute('disabled', true);
     this.intervalId = setInterval(() => {
       const currentTime = Date.now();
       const deltaTime = selectedTime - currentTime;
