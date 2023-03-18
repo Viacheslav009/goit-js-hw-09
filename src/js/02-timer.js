@@ -38,29 +38,7 @@ const timer = {
 
 buttonStart.addEventListener('click', () => {
   timer.start();
-  // timerId = setInterval(() => {
-  //   const date = new Date();
-  //   console.log(date);
-  //   // buttonChangeColorStart.setAttribute('disabled', true);
-  //   // document.body.style.backgroundColor = getRandomHexColor();
-  // }, 1000);
 });
-
-// const options = {
-//   enableTime: true,
-//   time_24hr: true,
-//   defaultDate: new Date(),
-//   minuteIncrement: 1,
-//   onClose(selectedDates) {
-//     if (selectedDates[0] < new Date()) {
-//       //   window.alert('Please choose a date in the future');
-//       Notify.failure('Please choose a date in the future');
-//     } else {
-//       buttonStart.removeAttribute('disabled');
-//     }
-//     console.log(selectedDates[0]);
-//   },
-// };
 
 const options = {
   enableTime: true,
@@ -72,16 +50,12 @@ const options = {
       Notify.failure('Please choose a date in the future');
       selectedDates[0] = new Date();
     } else {
-      // refs.startBtn.disabled = false;
+      refs.startBtn.disabled = false;
       buttonStart.removeAttribute('disabled');
       selectedTime = selectedDates[0];
     }
   },
 };
-
-// function pad(value) {
-//   return String(value).padStart(2, '0');
-// }
 
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
