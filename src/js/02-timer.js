@@ -1,7 +1,7 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import 'flatpickr/dist/themes/dark.css';
-import Notiflix from 'notiflix';
+// import Notiflix from 'notiflix';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const buttonStart = document.querySelector('button[data-start]');
@@ -18,7 +18,7 @@ const timer = {
     this.isActive = true;
     this.intervalId = setInterval(() => {
       const curentTime = Date.now();
-      deltaTime = selectedTime - curentTime;
+      let deltaTime = selectedTime - curentTime;
 
       const { days, hours, minutes, seconds } = convertMs(deltaTime);
       console.log(`${days}:${hours}:${minutes}:${seconds}`);
