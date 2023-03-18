@@ -17,13 +17,13 @@ const timer = {
     }
     this.isActive = true;
     this.intervalId = setInterval(() => {
-      const curentTime = Date.now();
-      let deltaTime = selectedTime - curentTime;
-
+      const currentTime = Date.now();
+      const deltaTime = selectedTime - currentTime;
+      console.log(deltaTime);
       const { days, hours, minutes, seconds } = convertMs(deltaTime);
       console.log(`${days}:${hours}:${minutes}:${seconds}`);
       updateComponentsTimer({ days, hours, minutes, seconds });
-      if (deltaTime <= 0) {
+      if (deltaTime <= 1000) {
         this.stop();
         Notify.success('Ура на.., распродажа на...');
       }
